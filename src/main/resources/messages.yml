@@ -1,0 +1,116 @@
+# ============================================================
+#  RIVALS – wiadomości (MiniMessage: https://docs.advntr.dev/minimessage/format.html)
+#  Paleta: akcent #38E8F0, tekst biały, przygaszony #8A93A6,
+#          przeciwnik / obrażenia #FF4D5E, monety #FFC83D
+#  Ikony z resource packa: <icon:coin>, <icon:heart>, <icon:clock>, <icon:cryo_grenade> …
+#  Pikselowa czcionka: <font:rivals:pixel>TEKST</font>
+# ============================================================
+config-version: 2
+
+prefix: "<icon:bar> <font:rivals:pixel><#38E8F0>RIVALS</#38E8F0></font> <dark_gray>»</dark_gray> "
+
+general:
+  no-permission: "<#FF4D5E>Nie masz uprawnień."
+  players-only: "<#FF4D5E>Ta komenda jest tylko dla graczy."
+  unknown-arena: "<#FF4D5E>Nieznana arena: <white><arena></white>. <#8A93A6>Dostępne: <white><list>"
+  player-not-found: "<#FF4D5E>Nie znaleziono gracza <white><name></white>."
+  profile-loading: "<#8A93A6>Profil jeszcze się wczytuje, spróbuj za chwilę."
+  help:
+    - "<icon:bar> <font:rivals:pixel><#38E8F0>RIVALS</#38E8F0></font>"
+    - "<white>/rivals graj <#8A93A6>— dołącz do kolejki 1v1"
+    - "<white>/rivals opusc <#8A93A6>— opuść kolejkę albo poddaj mecz"
+    - "<white>/rivals zestaw <#8A93A6>— wybór broni i gadżetu"
+    - "<white>/rivals sklep <#8A93A6>— skórki, efekty zabójstwa, ślady"
+    - "<white>/rivals statystyki [gracz] <#8A93A6>— profil i ranga"
+    - "<white>/rivals pack <#8A93A6>— wyślij ponownie resource pack"
+    - "<white>/rivals test [arena] <#8A93A6>— trening z botem (rivals.test)"
+    - "<white>/rivals admin <#8A93A6>— setlobby, reload, forcestart, stop, arenas, wallpreview, lobby, coins"
+
+pack:
+  prompt: "<font:rivals:pixel><#38E8F0>RIVALS</#38E8F0></font> <white>wymaga resource packa (modele, ikony, czcionka, dźwięki)."
+  declined: "<#FF4D5E>Resource pack RIVALS jest wymagany do gry.\n<white>Włącz go w ustawieniach serwera na liście serwerów."
+  failed: "<#FF4D5E>Nie udało się pobrać resource packa RIVALS.\n<white>Spróbuj ponownie za chwilę."
+
+queue:
+  joined: "<white>Dołączono do kolejki. <#8A93A6>(<count> w kolejce)"
+  left: "<white>Opuszczono kolejkę."
+  already: "<#FF4D5E>Już jesteś w kolejce."
+  in-match: "<#FF4D5E>Jesteś już w meczu."
+  not-queued: "<#FF4D5E>Nie jesteś w kolejce."
+  searching: "<icon:queue> <white>Szukanie przeciwnika <#8A93A6>· <white><time> <#8A93A6>· /rivals opusc"
+  no-arena: "<icon:queue> <white>Wszystkie areny są zajęte <#8A93A6>· <white><time>"
+
+kit:
+  saved: "<icon:check> <white>Zestaw zapisany – użyjesz go w następnym meczu."
+
+shop:
+  bought: "<icon:coin> <white>Kupiono <#38E8F0><item></#38E8F0> za <#FFC83D><price></#FFC83D> monet i założono."
+  not-enough: "<#FF4D5E>Za mało monet."
+
+bonus:
+  heal: "<icon:heart> <white>Kapsuła: <#5CE18A>leczenie</#5CE18A>!"
+  gadget: "<icon:check> <white>Kapsuła: <#FFC83D>dodatkowy ładunek gadżetu</#FFC83D>!"
+
+match:
+  found-title: "<font:rivals:pixel><#38E8F0>PRZECIWNIK ZNALEZIONY</#38E8F0></font>"
+  found-subtitle: "<white>vs <#FF4D5E><opponent></#FF4D5E> <#8A93A6>· <white><arena>"
+  found-chat: "<white>Mecz <#8A93A6>#<id></#8A93A6>: <white><self></white> vs <#FF4D5E><opponent></#FF4D5E> <#8A93A6>·</#8A93A6> arena <#38E8F0><arena></#38E8F0> <#8A93A6>·</#8A93A6> do <white><rounds></white> wygranych rund."
+  training-chat: "<#8A93A6>Mecz treningowy – bez ELO<reward_note>."
+  preparing: "<#8A93A6>Przygotowanie areny…"
+  kit-select: "<icon:clock> <white>Wybierz zestaw <#8A93A6>· start za <white><seconds>s"
+  countdown-sub: "<#8A93A6>Runda <white><round></white> · <white><score_self></white> : <#FF4D5E><score_enemy>"
+  bossbar: "<font:rivals:pixel><white><name_a> </white><#38E8F0><score_a>:<score_b></#38E8F0><white> <name_b>  </white><#8A93A6>·</#8A93A6><white>  RUNDA <round>  </white><#8A93A6>·</#8A93A6><white>  <time></white></font>"
+  bossbar-sd: "<font:rivals:pixel><white><name_a> </white><#38E8F0><score_a>:<score_b></#38E8F0><white> <name_b>  </white><#8A93A6>·</#8A93A6><#FF4D5E>  NAGŁA ŚMIERĆ  </#FF4D5E><#8A93A6>·</#8A93A6><white>  <time></white></font>"
+  bossbar-pause: "<font:rivals:pixel><white><name_a> </white><#38E8F0><score_a>:<score_b></#38E8F0><white> <name_b>  </white><#8A93A6>·  PRZERWA</#8A93A6></font>"
+  sudden-death-title: "<font:rivals:pixel><#FF4D5E>NAGŁA ŚMIERĆ</#FF4D5E></font>"
+  sudden-death-sub: "<white>Krawędź areny zaczyna się zapadać!"
+  kill-sub: "<white><score_self> <#8A93A6>:</#8A93A6> <#FF4D5E><score_enemy>"
+  death-sub: "<white>przez <#FF4D5E><killer>"
+  kill-chat: "<#8A93A6>Runda <round>:</#8A93A6> <white><killer></white> <#8A93A6>pokonał</#8A93A6> <white><victim></white> <#8A93A6>(<score_a> : <score_b>)"
+  void-chat: "<#8A93A6>Runda <round>:</#8A93A6> <white><victim></white> <#8A93A6>spadł z areny (<score_a> : <score_b>)"
+  timeout-win: "<#8A93A6>Koniec czasu –</#8A93A6> <white><winner></white> <#8A93A6>wygrywa rundę (więcej HP)."
+  timeout-draw: "<#8A93A6>Koniec czasu – remis, runda zostanie powtórzona."
+  timeout-title: "<font:rivals:pixel><white>KONIEC CZASU</white></font>"
+  intermission: "<icon:clock> <#8A93A6>Runda <white><round></white> za <white><seconds>s"
+  loser-kit: "<white>Masz <#38E8F0><seconds>s</#38E8F0> na zmianę zestawu."
+  victory-sub: "<white><score_self> <#8A93A6>:</#8A93A6> <#FF4D5E><score_enemy>"
+  defeat-sub: "<white><score_self> <#8A93A6>:</#8A93A6> <#FF4D5E><score_enemy>"
+  opponent-left: "<white><name></white> <#8A93A6>opuścił mecz – wygrywasz walkowerem."
+  forfeit: "<#8A93A6>Poddałeś mecz."
+  aborted: "<#FF4D5E>Mecz został przerwany."
+  result-win: "<font:rivals:pixel><#38E8F0>ZWYCIĘSTWO</#38E8F0></font>"
+  result-loss: "<font:rivals:pixel><#FF4D5E>PORAŻKA</#FF4D5E></font>"
+  summary:
+    - "<dark_gray><st>                                                  </st>"
+    - "<icon:bar> <font:rivals:pixel><#38E8F0>PODSUMOWANIE</#38E8F0></font>  <result>"
+    - "<white>Wynik: <white><score_self> <#8A93A6>:</#8A93A6> <#FF4D5E><score_enemy></#FF4D5E> <#8A93A6>vs</#8A93A6> <#FF4D5E><opponent>"
+    - "<white>Obrażenia: <white><damage> <#8A93A6>·</#8A93A6> Celność: <white><accuracy>% <#8A93A6>(<hits>/<shots>)"
+    - "<white>Zabójstwa: <white><kills> <#8A93A6>·</#8A93A6> Użyte gadżety: <white><gadgets>"
+    - "<icon:coin> <white>Monety: <#FFC83D>+<coins></#FFC83D> <#8A93A6>(seria +<streak_bonus>)</#8A93A6> <#8A93A6>·</#8A93A6> <icon:trophy> ELO: <white><elo_old> <#8A93A6>→</#8A93A6> <white><elo_new></white> <elo_delta>"
+    - "<dark_gray><st>                                                  </st>"
+
+stats:
+  lines:
+    - "<icon:bar> <font:rivals:pixel><#38E8F0>PROFIL</#38E8F0></font> <white><name>"
+    - "<icon:rank> <white>Ranga: <rank>"
+    - "<icon:trophy> <white>ELO: <white><elo>"
+    - "<icon:coin> <white>Monety: <#FFC83D><coins>"
+    - "<icon:flame> <white>Seria: <white><streak> <#8A93A6>(najlepsza <best>)"
+    - "<icon:dot> <white>Mecze: <white><matches> <#8A93A6>·</#8A93A6> W/P: <white><wins>/<losses>"
+    - "<icon:dot> <white>Zabójstwa / śmierci: <white><kills>/<deaths>"
+
+admin:
+  lobby-set: "<white>Ustawiono lobby."
+  lobby-object: "<white>Ustawiono obiekt lobby: <#38E8F0><what></#38E8F0>."
+  lobby-usage: "<#8A93A6>Użycie: <white>/rivals admin lobby <leaderboard|pedestal|npc|clear>"
+  coins: "<white><name></white> ma teraz <#FFC83D><coins></#FFC83D> monet."
+  reloaded: "<white>Przeładowano konfigurację <#8A93A6>(aren: <count>)."
+  forcestart-ok: "<white>Wystartowano mecz <#8A93A6>#<id>."
+  forcestart-fail: "<#FF4D5E>Nie udało się wystartować meczu (brak wolnej areny albo gracz zajęty)."
+  stopped: "<white>Przerwano mecz <#8A93A6>#<id>."
+  not-in-match: "<#FF4D5E>Ten gracz nie jest w meczu."
+  arenas-header: "<#38E8F0>— <bold>ARENY</bold></#38E8F0> <#8A93A6>(mecze: <matches>/<max>)"
+  arenas-template: "<white><id> <#8A93A6>· <display> · grawitacja <gravity> · <state>"
+  arenas-slot: "<#8A93A6>slot <slot>: <white><state>"
+  wallpreview: "<white>Podgląd animacji ściany: pękanie 3 s → rozpad → odbudowa."
+  usage: "<#8A93A6>Użycie: <white>/rivals admin <setlobby|reload|forcestart <g1> <g2> [arena]|stop <gracz>|arenas|wallpreview [blok]|lobby <...>|coins <gracz> <ile>>"

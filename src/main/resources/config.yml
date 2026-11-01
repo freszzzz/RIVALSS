@@ -1,0 +1,216 @@
+# ============================================================
+#  RIVALS – konfiguracja główna
+#  Czasy w SEKUNDACH (chyba że nazwa kończy się na -ticks).
+#  Brakujące klucze są brane z wartości domyślnych wbudowanych w plugin.
+# ============================================================
+config-version: 2
+
+# Adres wyświetlany na dole scoreboardu.
+server-address: "play.rivals.pl"
+
+resource-pack:
+  enabled: true
+  # Gracz, który odrzuci pack albo nie zdoła go pobrać, zostanie wyrzucony.
+  required: true
+  # Wbudowany serwer HTTP pluginu (port musi być otwarty dla graczy).
+  port: 8164
+  # Publiczny adres serwera dla linku do packa. Puste = adres, którym gracz się połączył.
+  host: ""
+  # Pełny URL (np. własny CDN). Jeśli ustawiony – wbudowany serwer HTTP się nie uruchamia.
+  url: ""
+  send-delay-ticks: 10
+  # true = plugin nie nadpisuje plugins/Rivals/resourcepack/rivals-pack.zip (własny pack).
+  keep-custom-file: false
+
+hud:
+  timezone: "Europe/Warsaw"
+  damage-numbers: true
+  hitmarker: true
+
+lobby:
+  # Ustaw komendą /rivals admin setlobby.
+  gamemode: ADVENTURE
+  protect: true
+  teleport-on-join: true
+  # Przedmioty w pasku: graj, zestaw, sklep, profil.
+  items: true
+  leaderboard-refresh-seconds: 60
+  pedestal-cycle-seconds: 6
+
+match:
+  rounds-to-win: 5
+  max-parallel: 10
+  # Czas na wybór zestawu w GUI przed pierwszą rundą (obaj "Gotowe" = start od razu).
+  kit-select-seconds: 15
+  countdown-seconds: 3
+  round-max-seconds: 90
+  sudden-death:
+    start-second: 60
+    ring-interval-seconds: 5
+    ring-crack-seconds: 2.0
+    min-radius: 7
+  killcam-seconds: 3
+  # Przegrany rundy ma tyle czasu na zmianę zestawu.
+  intermission-seconds: 10
+  end-return-seconds: 8
+  # HEALTH = po czasie wygrywa większy % HP, DRAW = powtórka rundy.
+  timeout-winner: HEALTH
+  natural-regeneration: false
+  fall-damage: false
+  max-health: 20.0
+  void-depth: 10
+
+queue:
+  elo-range-start: 100
+  elo-range-growth-per-second: 10
+
+arena-world:
+  name: "rivals_arenas"
+  spacing: 400
+  base-y: 100
+  build-blocks-per-tick: 6000
+
+animation:
+  wall:
+    crack-center-speedup: 0.35
+    wave-ticks-per-block: 1.0
+    fragments-min: 4
+    fragments-max: 8
+    fragment-life-ticks: 20
+    fragment-size-min: 0.22
+    fragment-size-max: 0.40
+    fragment-speed: 0.22
+    fragment-gravity: 0.045
+    keyframe-ticks: 2
+    rebuild-grow-ticks: 5
+    max-break-sounds-per-tick: 2
+  max-fragments: 300
+  fragment-cleanup-ticks: 30
+  max-rebuild-displays: 220
+
+# Domyślny zestaw nowego gracza: główna, dodatkowa, biała, gadżet.
+kits:
+  default: "rifle,pistol,sword,cryo_grenade"
+
+# ------------------------------------------------------------ BRONIE
+weapons:
+  energy_bow:   { damage: 9.0, speed: 3.0, cooldown: 0.6 }
+  crossbow:     { damage: 11.0, speed: 3.6, cooldown: 0.3 }
+  rifle:        { damage: 6.0, headshot: 1.5, range: 60, fire-delay-ticks: 8, magazine: 8, reload: 2.0 }
+  shotgun:      { pellets: 8, pellet-damage: 2.2, spread: 0.12, range: 16, fire-delay-ticks: 18, magazine: 4, reload: 2.4 }
+  pistol:       { damage: 3.5, headshot: 1.5, range: 40, fire-delay-ticks: 5, magazine: 12, reload: 1.5 }
+  slingshot:    { damage: 5.0, speed: 1.7, knockback: 0.7, fire-delay-ticks: 14 }
+  sword:        { damage: 6.0, attack-speed: 1.6 }
+  katana:       { damage: 5.0, attack-speed: 2.2, sprint-bonus: 1.3 }
+  hammer:
+    damage: 7.0
+    attack-speed: 0.9
+    min-charge-ticks: 8
+    max-charge-ticks: 30
+    slam-damage-min: 3.0
+    slam-damage-max: 10.0
+    slam-radius-min: 2.0
+    slam-radius-max: 5.0
+    knockback: 1.1
+    cooldown: 8
+
+# ------------------------------------------------------------ GADŻETY (cooldown w sekundach)
+gadgets:
+  cryo_grenade:    { cooldown: 12, radius: 3.0, freeze: 1.5, fuse: 1.5, damage: 2.0 }
+  cage_mine:       { cooldown: 15, arm: 1.0, trap: 2.0, lifetime: 30, trigger-radius: 0.9 }
+  net_launcher:    { cooldown: 10, slow: 0.7, duration: 2.5, speed: 2.2 }
+  flashbang:       { cooldown: 14, fuse: 1.2, angle: 70, blind-long: 2.0, blind-short: 0.5, radius: 20 }
+  gravity_anchor:  { cooldown: 16, pull: 6, range: 20, speed: 1.8 }
+  grapple:         { cooldown: 8, range: 28, pull-speed: 1.4 }
+  trampoline:      { cooldown: 18, duration: 6, launch: 1.35 }
+  recall_crystal:  { cooldown: 20, window: 5, heal: 4.0 }
+  dash_gauntlet:   { cooldown: 6, distance: 5, power: 1.9 }
+  boomerang:       { cooldown: 8, damage: 5.0, range: 14 }
+  sticky_grenade:  { cooldown: 14, fuse: 2.0, radius: 3.5, damage-max: 12.0, damage-min: 3.0 }
+  rocket_launcher: { cooldown: 15, speed: 1.4, radius: 3.5, damage-max: 10.0, damage-min: 3.0, self-damage: 0.3, knockback: 1.2 }
+  shield_disc:     { cooldown: 18, duration: 4.0 }
+  decoy:           { cooldown: 20, run: 3.0, invisibility: 1.5, speed: 0.28 }
+  mirror:          { cooldown: 22, range: 32 }
+  medkit:          { cooldown: 25, heal: 8.0, cast: 1.0 }
+
+# ------------------------------------------------------------ MONETY / BONUS
+rewards:
+  round-win: 5
+  match-win: 25
+  kill: 3
+  streak-bonus-per-win: 5
+  streak-bonus-max: 25
+  bot-matches-give-rewards: false
+
+coins:
+  # Monety do zebrania na arenie w trakcie rundy (para symetryczna).
+  per-round: 2
+  pickup-value: 2
+  spawn-after-min: 15
+  spawn-after-max: 35
+  pickup-radius: 1.2
+
+capsule:
+  enabled: true
+  # Po ilu sekundach rundy spada kapsuła z bonusem na środek areny.
+  after: 20
+  heal: 6.0
+  pickup-radius: 1.3
+
+decorations:
+  enabled: true
+  max-per-arena: 60
+
+# ------------------------------------------------------------ SKLEP (ceny w monetach)
+shop:
+  prices:
+    sword_neon: 150
+    sword_gold: 300
+    katana_sakura: 250
+    hammer_magma: 300
+    rifle_arctic: 200
+    pistol_gold: 250
+    shotgun_toxic: 200
+    bow_void: 200
+    kill_ice: 200
+    kill_confetti: 150
+    kill_lightning: 250
+    kill_pixel: 300
+    trail_gold: 100
+    trail_red: 100
+    trail_purple: 100
+    trail_green: 100
+    trail_white: 150
+
+elo:
+  start: 1000
+  k-factor: 32
+  min: 0
+
+ranks:
+  - { name: "Brąz III", min: 0, color: "#C9875A" }
+  - { name: "Brąz II", min: 700, color: "#C9875A" }
+  - { name: "Brąz I", min: 800, color: "#C9875A" }
+  - { name: "Srebro III", min: 900, color: "#C8D2DC" }
+  - { name: "Srebro II", min: 970, color: "#C8D2DC" }
+  - { name: "Srebro I", min: 1040, color: "#C8D2DC" }
+  - { name: "Złoto III", min: 1110, color: "#FFC83D" }
+  - { name: "Złoto II", min: 1180, color: "#FFC83D" }
+  - { name: "Złoto I", min: 1260, color: "#FFC83D" }
+  - { name: "Platyna III", min: 1340, color: "#5CE1C6" }
+  - { name: "Platyna II", min: 1420, color: "#5CE1C6" }
+  - { name: "Platyna I", min: 1500, color: "#5CE1C6" }
+  - { name: "Diament", min: 1600, color: "#7FB7FF" }
+  - { name: "Mistrz", min: 1800, color: "#38E8F0" }
+
+training-bot:
+  name: "<#FF4D5E>Trening"
+  health: 20.0
+  speed: 0.28
+  damage: 4.0
+
+# Nadpisania dźwięków: <id z sounds.json>: { key, volume, pitch }.
+# Domyślnie każdy dźwięk to rivals:<id> z resource packa (sounds.json), np.:
+# sounds:
+#   gadget.cryo.explode: { key: "rivals:gadget.cryo.explode", volume: 1.0, pitch: 1.0 }
+sounds: {}

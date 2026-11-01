@@ -1,0 +1,11 @@
+.gradle/
+build/
+run/
+*.class
+
+.idea/
+*.iml
+.vscode/
+
+# podgląd modeli zawiera tekstury z klienta gry
+podglad/

@@ -1,0 +1,21 @@
+name: Rivals
+version: '${version}'
+main: pl.rivals.RivalsPlugin
+api-version: '1.21.4'
+author: RIVALS
+description: Tryb 1v1 RIVALS – krótkie pojedynki na rundy z gadżetami.
+commands:
+  rivals:
+    description: Główna komenda trybu RIVALS
+    aliases: [rv]
+    usage: /rivals <graj|opusc|statystyki|test|admin>
+permissions:
+  rivals.play:
+    description: Granie w RIVALS
+    default: true
+  rivals.test:
+    description: Mecz treningowy z botem
+    default: op
+  rivals.admin:
+    description: Komendy administracyjne
+    default: op
